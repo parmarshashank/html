@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body style=" background-color: #333333;">
+        <script>
+            function display(){
+                var d=new Date();
+                var date=d.getDate();
+                var month=d.getMonth();
+                month++;
+                var year=d.getFullYear();
+                document.getElementById("div").innerHTML=date+"/"+month+"/"+year;
+            }
+        </script>
+        <input type="button" value="Display date" onclick="display()">
+        <p style="color: aliceblue;">Press the button to view Date</p>
+        <div id="div" style="color: aliceblue;"></div>
+    </body>
+</html>

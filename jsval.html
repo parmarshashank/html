@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <title>Title of the Document</title> 
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"> 
+    </script> 
+  </head> 
+  <body style="background-color: #333333;"> 
+    <form> 
+      <p style="color: aliceblue;">Enter an email address:</p> 
+      <input id='email'>
+      <div style="color: aliceblue;"id='result'></div>  
+      <button type='submit' id='validate'>Validate button</button> <br>
+      <p style="color: aliceblue;">Enter your phone number:</p> 
+      <input id="phone" maxlength="10">
+    </form> 
+    
+    <script> 
+      function validateEmail(email) { 
+        let res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/; 
+        return res.test(email); 
+      } 
+      function validate() { 
+        let result = $("#result"); 
+        let email = $("#email").val(); 
+        result.text(""); 
+        if(validateEmail(email)) { 
+          result.text(email + " is valid"); 
+          result.css("color", "blue"); 
+        } else { 
+          result.text(email + " is not valid"); 
+          result.css("color", "red"); 
+        } 
+        return false; 
+      } 
+      $("#validate").on("click", validate); 
+    </script> 
+  </body> 
+</html>
